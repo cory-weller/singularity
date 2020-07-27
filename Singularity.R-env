@@ -1,0 +1,20 @@
+Bootstrap: docker 
+From: ubuntu:18.04
+
+%post
+    apt-get -y update
+    apt-get install -y r-base-core
+    
+    #libcurl4-openssl-dev libopenmpi-dev openmpi-bin openmpi-common openmpi-doc openssh-client openssh-server libssh-dev wget vim git nano git cmake  gfortran g++ curl wget python autoconf bzip2 libtool libtool-bin python-pip python-dev
+
+    R --slave -e "install.packages('data.table')"
+    R --slave -e "install.packages('ggplot2')"
+    R --slave -e "install.packages('foreach')"
+    R --slave -e "install.packages('ggthemes')"
+    R --slave -e "install.packages('cowplot')"
+    R --slave -e "install.packages('doMC')"
+    
+%files
+
+%runscript
+    R
