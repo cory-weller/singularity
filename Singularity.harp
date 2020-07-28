@@ -7,66 +7,6 @@ IncludeCmd: yes
     apt-get update
     apt-get -y install build-essential autoconf git wget unzip libboost-all-dev libreadline-dev libncurses5-dev libncursesw5-dev zlib1g-dev libbz2-dev liblzma-dev nano
 
-#    # HTSlib
-#    htslibver=1.8
-#    htslibdir=/opt/htslib
-#    mkdir -p ${htslibdir}
-#    htslibtarfile=${htslibver}.tar.gz
-#    cd ${htslibdir}
-#    wget https://github.com/samtools/htslib/archive/${htslibtarfile}
-#    tar xzf ${htslibtarfile}
-#    rm -rf $htslibver
-#    mv htslib-${htslibver} ${htslibver}
-#    cd ${htslibver}
-#    autoheader
-#    autoconf 
-#    ./configure
-#    make
-#    make install
-
-
-#    # Samtools
-#    samtoolsver=0.1.20
-#    samtoolsdir=/opt/
-#    mkdir -p ${samtoolsdir}
-#    samtoolstarfile=${samtoolsver}.tar.gz
-#    cd ${samtoolsdir}
-#    wget https://github.com/samtools/samtools/archive/${samtoolstarfile}
-#    tar xzf ${samtoolstarfile}
-#    rm -rf $samtoolsver
-#    mv samtools-${samtoolsver} samtools
-#    cd samtools
-#    autoheader
-#    autoconf -Wno-syntax
-#    ./configure #--with-htslib=${htslibdir}/${htslibver}
-#    make
-#    make install
-
-#    rm *.o
-#    rm misc/*.o
-#    mkdir bin
-#    bins="samtools \
-#         misc/wgsim \
-#         misc/md5sum-lite \
-#         misc/md5fa \
-#         misc/maq2sam-short \
-#         misc/maq2sam-long"
-#    for b in $bins; do
-#        mv $b bin
-#    done 
-#    find . -name "*.pl" -exec mv {} bin \;
-#    find . -name "*.py" -exec mv {} bin \;
-#    mkdir include
-#    find . -name "*.h" -exec mv {} include \;
-#    mkdir lib
-#    mv libbam.a lib
-#    cd ..
-#    rm ${samtoolstarfile}
-#    export PATH=${samtoolsdir}/samtools/bin:$PATH
-#    export LD_LIBRARY_PATH=${samtoolsdir}/samtools/lib:$PATH
-#    export CPATH=${samtoolsdir}/samtools:$CPATH
-   
-
     # Harp
     cd /opt
     ZIPFILE=ff5cc0b01f4a.zip
