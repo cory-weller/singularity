@@ -1,0 +1,52 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%environment
+
+%post
+    apt-get -y update
+    apt-get install -y apt-utils coreutils wget curl build-essential libncurses5-dev zlib1g-dev libbz2-dev liblzma-dev libcurl4-openssl-dev libssl-dev
+  
+    # install sratoolkit
+    wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"
+    tar -zxvf sratoolkit.current-centos_linux64.tar.gz
+    mkdir -p /opt/bin/sratoolkit/
+    mv sratoolkit.2.10.8-centos_linux64/* /opt/sratoolkit
+
+    # install minimap2
+    curl -L https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2 | tar -jxvf -
+    mv minimap2-2.17_x64-linux/minimap2 /opt/bin/
+
+    # install samtools
+    wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
+    bunzip2 samtools-1.11.tar.bz2
+    tar -xvf samtools-1.11.tar
+    cd samtools-1.11
+    ./configure --prefix=/opt/
+    make
+    make install
+    cd ..
+
+    # install bcftools
+    wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2
+    bunzip2 bcftools-1.11.tar.bz2
+    tar -xvf bcftools-1.11.tar
+    cd bcftools-1.11
+    ./configure --prefix=/opt/
+    make
+    make install
+    cd ..
+
+    # install htslib
+    wget https://github.com/samtools/htslib/releases/download/1.11/htslib-1.11.tar.bz2
+    bunzip2 htslib-1.11.tar.bz2
+    tar -xvf htslib-1.11.tar
+    cd htslib-1.11
+    ./configure --prefix=/opt/
+    make
+    make install
+    cd ..
+
+%files
+
+%runscript
