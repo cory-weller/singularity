@@ -11,7 +11,7 @@ From: ubuntu:18.04
     wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"
     tar -zxvf sratoolkit.current-centos_linux64.tar.gz
     mkdir -p /opt/bin/sratoolkit/
-    mv sratoolkit.2.10.8-centos_linux64/* /opt/sratoolkit
+    mv sratoolkit.2.10.8-centos_linux64/* /opt/bin/sratoolkit
 
     # install minimap2
     curl -L https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2 | tar -jxvf -
