@@ -1,0 +1,40 @@
+Bootstrap: docker 
+From: ubuntu:focal
+
+
+%environment
+
+    BARSEQ_PATH="/opt/barseq/"
+    export BARSEQ_PATH
+
+%post
+    apt-get update
+
+    # Install python 3.7 and git
+    apt-get -y install coreutils wget
+    apt-get -y install python python-setuptools
+    python /usr/lib/python2.7/dist-packages/easy_install.py pip
+
+    apt-get -y install python-dev  \
+     build-essential libssl-dev libffi-dev \
+     libxml2-dev libxslt1-dev zlib1g-dev \
+
+    pip install 'numpy==1.12.1'
+    pip install 'scipy==0.19.0'
+    pip install 'pandas==0.20.1'
+    pip install 'matplotlib==2.0.2'
+    pip install 'scikit-learn==0.18.1'
+    pip install 'biopython==1.68'
+    pip install 'fastcluster==1.1.20'
+    pip install 'pyyaml== 3.11'
+    pip install 'networkx==1.11'
+    
+    # Install BEANcounter
+    mkdir -p /opt/ && cd /opt/
+    wget https://github.com/csbio/BEAN-counter/archive/2.6.1.tar.gz
+    tar -zxvf 2.6.1.tar.gz && mv 2.6.1/* /opt/barseq/
+    
+%files
+
+%runscript
+   #exec /usr/local/bin/multiqc "$@"
