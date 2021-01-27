@@ -1,0 +1,38 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+
+%environment
+    R_VERSION=4.0.0
+    export R_VERSION
+    R_CONFIG_DIR=/etc/R/
+    export R_CONFIG_DIR
+    export LC_ALL=C
+    export PATH=$PATH
+
+%post
+    apt-get update
+    apt-get install -y apt-transport-https apt-utils software-properties-common
+    apt-get install -y add-apt-key
+    export DEBIAN_FRONTEND=noninteractive
+    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CB
+    add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cra
+    apt-get -y update
+    apt-get install -y r-base r-base-dev
+
+    #libcurl4-openssl-dev libopenmpi-dev openmpi-bin openmpi-common openmpi-doc ope
+
+    R --slave -e "install.packages('data.table')"
+    R --slave -e "install.packages('ggplot2')"
+    R --slave -e "install.packages('foreach')"
+    R --slave -e "install.packages('ggthemes')"
+    R --slave -e "install.packages('cowplot')"
+    R --slave -e "install.packages('doMC')"
+    R --slave -e "if (!requireNamespace('BiocManager', quietly = TRUE)) {install.packages('BiocManager')}"
+
+%files
+
+%runscript
+
