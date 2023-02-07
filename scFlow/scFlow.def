@@ -61,6 +61,7 @@ From: ubuntu:focal
     R --no-echo -e "devtools::install_github("combiz/scFlow")"
     R --no-echo -e "devtools::install_github("combiz/scFlowData")"
 
+    unset DEBIAN_FRONTEND
 
 %runscript
     eval ${@}
