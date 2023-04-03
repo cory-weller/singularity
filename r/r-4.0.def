@@ -38,16 +38,24 @@ From: ubuntu:focal
         libxml2-dev \
         xauth
     
+    # exclude DESeq2 apeglm
+
     R --no-echo -e "install.packages('data.table', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('R.utils', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('ggplot2', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('foreach', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('doMC', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('ggthemes', repos='http://cran.us.r-project.org')"
-    R --no-echo -e "install.packages('BiocManager', repos='http://cran.us.r-project.org')"
-    R --no-echo -e "BiocManager::install('DESeq2')"
-    R --no-echo -e "BiocManager::install('apeglm')"
+    R --no-echo -e "install.packages('ggrepel', repos='http://cran.us.r-project.org')"
+    R --no-echo -e "install.packages('optparse', repos='http://cran.us.r-project.org')"
+    R --no-echo -e "install.packages('umap', repos='http://cran.us.r-project.org')"
+    R --no-echo -e "install.packages('corrplot', repos='http://cran.us.r-project.org')"
+    R --no-echo -e "install.packages('reshape2', repos='http://cran.us.r-project.org')"
+    # R --no-echo -e "install.packages('BiocManager', repos='http://cran.us.r-project.org')"
+    # R --no-echo -e "BiocManager::install('DESeq2')"
+    # R --no-echo -e "BiocManager::install('apeglm')"
 
 
 %runscript
     eval ${@}
+
