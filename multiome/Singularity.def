@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: condaforge/mambaforge:latest
+
+%files
+multiome.yml /conda-envs/138feb65c5520a989894cde858a1c339/environment.yaml
+
+%post
+mkdir -p /conda-envs/138feb65c5520a989894cde858a1c339
+
+mamba env create --prefix /conda-envs/138feb65c5520a989894cde858a1c339 --file /conda-envs/138feb65c5520a989894cde858a1c339/environment.yaml && \
+
+mamba clean --all -y
+
+%runscript
+exec /bin/bash "$@"
+
+%startscript
+exec /bin/bash "$@"
+
