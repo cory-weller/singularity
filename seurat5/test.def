@@ -1,0 +1,10 @@
+BootStrap: docker
+From: ubuntu:focal
+
+%environment
+    export GITHUB_PAT='thisismytoken'
+
+%post
+    apt-get -y update && DEBIAN_FRONTEND=noninteractive
+    cd /opt
+    echo $GITHUB_PAT > wat

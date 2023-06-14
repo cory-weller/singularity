@@ -1,0 +1,87 @@
+r-part2.def
+
+    R --no-echo -e "install.packages('remotes')"
+
+    git clone https://github.com/welch-lab/liger.git
+    R --no-echo -e "remotes::install_local('liger')"
+    rm -rf liger
+    
+    git clone https://github.com/hms-dbmi/conos.git
+    R --no-echo -e "remotes::install_local('conos')"
+    rm -rf conos
+
+    git clone https://github.com/immunogenomics/harmony.git
+    R --no-echo -e "remotes::install_local('harmony')"
+    rm -rf harmony
+
+    git clone https://github.com/immunogenomics/presto.git
+    R --no-echo -e "remotes::install_local('presto')"
+    rm -rf presto
+
+    git clone -b seurat5 https://github.com/satijalab/seurat-data.git
+    R --no-echo -e "remotes::install_local('seurat-data')"
+    rm -rf seurat-data
+
+    git clone https://github.com/velocyto-team/velocyto.R.git
+    R --no-echo -e "remotes::install_local('velocyto.R')"
+    rm -rf velocyto.R
+
+    git clone https://github.com/SaskiaFreytag/schex.git
+    R --no-echo -e "remotes::install_local('schex')"
+    rm -rf schex
+
+    git clone https://github.com/cole-trapnell-lab/monocle3.git
+    R --no-echo -e "remotes::install_local('monocle3')"
+    rm -rf monocle3
+
+    git clone https://github.com/mojaveazure/seurat-disk.git
+    R --no-echo -e "remotes::install_local('seurat-disk')"
+    rm -rf seurat-disk
+
+    git clone https://github.com/powellgenomicslab/Nebulosa.git
+    R --no-echo -e "remotes::install_local('Nebulosa')"
+    rm -rf Nebulosa
+
+    git clone https://github.com/atakanekiz/CIPR-Package.git
+    R --no-echo -e "remotes::install_local('CIPR-Package')"
+    rm -rf CIPR-Package
+
+    git clone https://github.com/prabhakarlab/Banksy.git
+    R --no-echo -e "remotes::install_local('Banksy')"
+    rm -rf Banksy
+
+    git clone -b seurat5 https://github.com/mojaveazure/seurat-object
+    R --no-echo -e "remotes::install_local('seurat-object')"
+    rm -rf seurat-object
+
+    git clone -b seurat5 https://github.com/stuart-lab/signac
+    R --no-echo -e "remotes::install_local('signac')"
+    rm -rf signac
+    
+    
+
+
+    git clone -b seurat5 https://github.com/satijalab/seurat-wrappers.git
+
+    git clone -b seurat5 https://github.com/satijalab/seurat.git
+
+
+    R --no-echo -e "remotes::install_local('seurat-wrappers')"
+    rm -rf seurat-wrappers
+
+    # R --no-echo -e "install.packages('BiocManager')"
+
+    # wget https://gist.githubusercontent.com/cory-weller/496a3135e2c2527443097dfb16072699/raw/88c66ae486e96e06e176e076a4dc0678e17b6e1e/packages.R
+
+    # wget https://gist.githubusercontent.com/cory-weller/496a3135e2c2527443097dfb16072699/raw/88c66ae486e96e06e176e076a4dc0678e17b6e1e/renv.lock
+    
+    # Install all renv packages
+
+    # R --no-echo -e "renv::restore()"
+    # # Install python3.8 and pip3
+    # apt-get clean
+    # apt-get update
+    # apt-get install -y python3.8 python3-pip
+
+    # # Install scrublet
+    # pip3 install scrublet
