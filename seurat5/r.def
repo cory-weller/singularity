@@ -51,7 +51,9 @@ From: ubuntu:focal
         cmake \
         libudunits2-dev \
         libgdal-dev \
-        libboost-all-dev
+        libboost-all-dev \
+        gsl-bin \
+        libgsl-dev
         
     
 
@@ -121,9 +123,12 @@ From: ubuntu:focal
 
     apt-get install -y python3.8 python3-pip
     pip3 install scrublet
+    pip3 install leidenalg
+    pip3 install annoy
 
     # Remove old git dirs?
 
+R --no-echo -e "
 
 
     # end noninteractive install
