@@ -20,13 +20,10 @@ r-part2.def
     git clone https://github.com/immunogenomics/presto.git
     R --no-echo -e "remotes::install_local('presto')"
     rm -rf presto
-    # WORKS
 
     git clone -b seurat5 https://github.com/satijalab/seurat.git
     R --no-echo -e "remotes::install_local('seurat')"
     rm -rf seurat
-    # TESTING
-
 
     git clone -b seurat5 https://github.com/satijalab/seurat-data.git
     R --no-echo -e "remotes::install_local('seurat-data')"
@@ -39,7 +36,15 @@ r-part2.def
     git clone -b seurat5 https://github.com/mojaveazure/seurat-object
     R --no-echo -e "remotes::install_local('seurat-object')"
     rm -rf seurat-object
-    
+
+    R --no-echo -e "install.packages('BiocManager')"
+    R --no-echo -e "BiocManager::install('SingleCellExperiment')"
+    # WORKS
+    R --no-echo -e "BiocManager::install('scater')"
+
+
+
+    #GIT RATE LIMIT
     git clone -b seurat5 https://github.com/satijalab/seurat-wrappers.git
     R --no-echo -e "remotes::install_local('seurat-wrappers')"
     rm -rf seurat-wrappers
@@ -55,7 +60,9 @@ r-part2.def
     rm -rf velocyto.R
 
     git clone https://github.com/SaskiaFreytag/schex.git
+    (cd schex && git checkout 031320d)
     R --no-echo -e "remotes::install_local('schex')"
+
     rm -rf schex
 
     git clone https://github.com/cole-trapnell-lab/monocle3.git
@@ -77,7 +84,7 @@ r-part2.def
     rm -rf Banksy
 
 
-    
+ 
 
 
 
