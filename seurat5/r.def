@@ -99,6 +99,7 @@ From: ubuntu:focal
     
     R --no-echo -e "BiocManager::install('pcaMethods')"
     BiocManager::install("pcaMethods", version = "3.17")
+    
     git clone https://github.com/velocyto-team/velocyto.R.git
     R --no-echo -e "remotes::install_local('velocyto.R')"
     rm -rf velocyto.R
