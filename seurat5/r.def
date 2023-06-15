@@ -45,7 +45,8 @@ From: ubuntu:focal
         libxml2-dev \
         xauth \
         libhdf5-dev \
-        libgmp-dev
+        libgmp-dev \
+        libharfbuzz-dev
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
