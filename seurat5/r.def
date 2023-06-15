@@ -48,7 +48,8 @@ From: ubuntu:focal
         libgmp-dev \
         libharfbuzz-dev \
         libfribidi-dev \
-        cmake
+        cmake \
+        libudunits2-dev
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
