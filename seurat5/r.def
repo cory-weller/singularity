@@ -126,10 +126,76 @@ From: ubuntu:focal
     pip3 install leidenalg
     pip3 install annoy
 
-    # Remove old git dirs?
+    R --no-echo -e "install.packages('xml2')"
+    R --no-echo -e "install.packages('zip')"
+    R --no-echo -e "install.packages('XML')"
+    R --no-echo -e "install.packages('whisker')"
+    R --no-echo -e "install.packages('wesanderson')"
+    R --no-echo -e "install.packages('vroom')"
+    R --no-echo -e "install.packages('clipr')"
+    R --no-echo -e "install.packages('gargle')"
+    R --no-echo -e "install.packages('gh')"
+    R --no-echo -e "install.packages('httr2')"
+    R --no-echo -e "install.packages('plogr')"
+    R --no-echo -e "install.packages('readr')"
+    R --no-echo -e "install.packages('DT')"
+    R --no-echo -e "install.packages('googledrive')"
+    R --no-echo -e "install.packages('googlesheets4')"
+    R --no-echo -e "install.packages('rematch')"
+    R --no-echo -e "install.packages('dbplyr')"
+    R --no-echo -e "install.packages('blob')"
+    R --no-echo -e "install.packages('credentials')"
+    R --no-echo -e "install.packages('gert')"
+    R --no-echo -e "install.packages('gitcreds')"
+    R --no-echo -e "install.packages('ids')"
+    R --no-echo -e "install.packages('ini')"
+    R --no-echo -e "install.packages('mixtools')"
+    R --no-echo -e "install.packages('poweRlaw')"
+    R --no-echo -e "install.packages('restfulr')"
+    R --no-echo -e "install.packages('rootSolve')"
+    R --no-echo -e "install.packages('RSQLite')"
+    R --no-echo -e "install.packages('rstudioapi')"
+    R --no-echo -e "install.packages('segmented')"
+    R --no-echo -e "install.packages('shinyBS')"
+    R --no-echo -e "install.packages('shinydashboard')"
+    R --no-echo -e "install.packages('shinyjs')"
+    R --no-echo -e "install.packages('SoupX')"
+    R --no-echo -e "install.packages('TFMPvalue')"
+    R --no-echo -e "install.packages('tzdb')"
+    R --no-echo -e "install.packages('uuid')"
 
-R --no-echo -e "
 
+
+    R --no-echo -e "BiocManager::install('annotate')"
+    R --no-echo -e "BiocManager::install('AnnotationFilter')"
+    R --no-echo -e "BiocManager::install('AnnotationDbi')"
+    R --no-echo -e "BiocManager::install('BiocFileCache')"
+    R --no-echo -e "BiocManager::install('BiocIO')"
+    R --no-echo -e "BiocManager::install('biomaRt')"
+    R --no-echo -e "BiocManager::install('BSgenome')"
+    R --no-echo -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg38')"
+    R --no-echo -e "BiocManager::install('cellranger')"
+    R --no-echo -e "BiocManager::install('CNEr')"
+    R --no-echo -e "BiocManager::install('DirichletMultinomial')"
+    R --no-echo -e "BiocManager::install('EnsDb.Hsapiens.v86')"
+    R --no-echo -e "BiocManager::install('ensembldb')"
+    R --no-echo -e "BiocManager::install('GenomicAlignments')"
+    R --no-echo -e "BiocManager::install('GenomicFeatures')"
+    R --no-echo -e "BiocManager::install('glmGamPoi')"
+    R --no-echo -e "BiocManager::install('GO.db')"
+    R --no-echo -e "BiocManager::install('JASPAR2020')"
+    R --no-echo -e "BiocManager::install('KEGGREST')"
+    R --no-echo -e "BiocManager::install('ProtGenerics')"
+    R --no-echo -e "BiocManager::install('rtracklayer')"
+    R --no-echo -e "BiocManager::install('seqLogo')"
+    R --no-echo -e "BiocManager::install('TFBSTools')"
+
+
+    git clone -b seurat5 https://github.com/satijalab/azimuth.git
+    R --no-echo -e "remotes::install_local('azimuth')"
+
+    git clone https://github.com/bnprks/BPCells.git
+    R --no-echo -e "remotes::install_local('BPCells')"
 
     # end noninteractive install
     unset DEBIAN_FRONTEND
