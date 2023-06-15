@@ -43,12 +43,16 @@ From: ubuntu:focal
         curl \
         libxml2 \
         libxml2-dev \
-        xauth
+        xauth \
+        libhdf5-dev \
+        libgmp-dev
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('remotes', repos='http://cran.us.r-project.org')"
-
+#    R --no-echo -e "install.packages('RcppEigen', repos='http://cran.us.r-project.org')"
+#    R --no-echo -e "install.packages('uwot', repos='http://cran.us.r-project.org')"
+#    R --no-echo -e "install.packages('hdf5r', repos='http://cran.us.r-project.org')"
 
 
     # end noninteractive install
