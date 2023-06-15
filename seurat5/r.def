@@ -47,7 +47,8 @@ From: ubuntu:focal
         libhdf5-dev \
         libgmp-dev \
         libharfbuzz-dev \
-        libfribidi-dev
+        libfribidi-dev \
+        cmake
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
