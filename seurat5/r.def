@@ -50,7 +50,8 @@ From: ubuntu:focal
         libfribidi-dev \
         cmake \
         libudunits2-dev \
-        libgdal-dev
+        libgdal-dev \
+        libboost-all-dev
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
