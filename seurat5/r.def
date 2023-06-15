@@ -52,13 +52,78 @@ From: ubuntu:focal
         libudunits2-dev \
         libgdal-dev \
         libboost-all-dev
+        
     
 
     R --no-echo -e "install.packages('renv', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('remotes', repos='http://cran.us.r-project.org')"
-#    R --no-echo -e "install.packages('RcppEigen', repos='http://cran.us.r-project.org')"
-#    R --no-echo -e "install.packages('uwot', repos='http://cran.us.r-project.org')"
-#    R --no-echo -e "install.packages('hdf5r', repos='http://cran.us.r-project.org')"
+    git clone https://github.com/welch-lab/liger.git
+    R --no-echo -e "remotes::install_local('liger')"
+
+    git clone https://github.com/kharchenkolab/leidenAlg.git
+    R --no-echo -e "remotes::install_local('leidenAlg')"
+
+    git clone https://github.com/hms-dbmi/conos.git
+    R --no-echo -e "remotes::install_local('conos')"
+
+    git clone https://github.com/immunogenomics/harmony.git
+    R --no-echo -e "remotes::install_local('harmony')"
+
+    git clone https://github.com/immunogenomics/presto.git
+    R --no-echo -e "remotes::install_local('presto')"
+
+    git clone -b seurat5 https://github.com/satijalab/seurat.git
+    R --no-echo -e "remotes::install_local('seurat')"
+
+    git clone -b seurat5 https://github.com/satijalab/seurat-data.git
+    R --no-echo -e "remotes::install_local('seurat-data')"
+
+    git clone https://github.com/mojaveazure/seurat-disk.git
+    R --no-echo -e "remotes::install_local('seurat-disk')"
+
+    git clone -b seurat5 https://github.com/mojaveazure/seurat-object
+    R --no-echo -e "remotes::install_local('seurat-object')"
+
+    R --no-echo -e "install.packages('BiocManager')"
+    R --no-echo -e "BiocManager::install('SingleCellExperiment')"
+    R --no-echo -e "BiocManager::install('scater')"
+
+    git clone https://github.com/SaskiaFreytag/schex.git
+    (cd schex && git checkout 031320d)      # use specific commit from seurat dependencies
+    R --no-echo -e "remotes::install_local('schex')"
+
+    git clone https://github.com/cole-trapnell-lab/monocle3.git
+    R --no-echo -e "remotes::install_local('monocle3')"
+    
+    R --no-echo -e "BiocManager::install('pcaMethods')"
+    BiocManager::install("pcaMethods", version = "3.17")
+    git clone https://github.com/velocyto-team/velocyto.R.git
+    R --no-echo -e "remotes::install_local('velocyto.R')"
+    rm -rf velocyto.R
+
+    R --no-echo -e "BiocManager::install('Rsamtools')"
+
+    git clone -b seurat5 https://github.com/stuart-lab/signac
+    R --no-echo -e "remotes::install_local('signac')"
+
+    git clone https://github.com/powellgenomicslab/Nebulosa.git
+    R --no-echo -e "remotes::install_local('Nebulosa')"
+    
+    git clone https://github.com/atakanekiz/CIPR-Package.git
+    R --no-echo -e "remotes::install_local('CIPR-Package')"
+
+    git clone https://github.com/prabhakarlab/Banksy.git
+    R --no-echo -e "remotes::install_local('Banksy')"
+    R --no-echo -e "install.packages('R.utils')"
+
+    git clone -b seurat5 https://github.com/satijalab/seurat-wrappers.git
+    R --no-echo -e "remotes::install_local('seurat-wrappers')"
+
+    apt-get install -y python3.8 python3-pip
+    pip3 install scrublet
+
+    # Remove old git dirs?
+
 
 
     # end noninteractive install
