@@ -1,11 +1,14 @@
 r-part2.def
 
-    R --no-echo -e "install.packages('remotes')"
 
     git clone https://github.com/welch-lab/liger.git
     R --no-echo -e "remotes::install_local('liger')"
     rm -rf liger
-    
+
+    git clone https://github.com/kharchenkolab/leidenAlg.git
+    R --no-echo -e "remotes::install_local('leidenAlg')"
+    rm -rf leidenAlg
+
     git clone https://github.com/hms-dbmi/conos.git
     R --no-echo -e "remotes::install_local('conos')"
     rm -rf conos
@@ -17,10 +20,35 @@ r-part2.def
     git clone https://github.com/immunogenomics/presto.git
     R --no-echo -e "remotes::install_local('presto')"
     rm -rf presto
+    # WORKS
+
+    git clone -b seurat5 https://github.com/satijalab/seurat.git
+    R --no-echo -e "remotes::install_local('seurat')"
+    rm -rf seurat
+    # TESTING
+
 
     git clone -b seurat5 https://github.com/satijalab/seurat-data.git
     R --no-echo -e "remotes::install_local('seurat-data')"
     rm -rf seurat-data
+
+    git clone https://github.com/mojaveazure/seurat-disk.git
+    R --no-echo -e "remotes::install_local('seurat-disk')"
+    rm -rf seurat-disk
+
+    git clone -b seurat5 https://github.com/mojaveazure/seurat-object
+    R --no-echo -e "remotes::install_local('seurat-object')"
+    rm -rf seurat-object
+    
+    git clone -b seurat5 https://github.com/satijalab/seurat-wrappers.git
+    R --no-echo -e "remotes::install_local('seurat-wrappers')"
+    rm -rf seurat-wrappers
+
+    git clone -b seurat5 https://github.com/stuart-lab/signac
+    R --no-echo -e "remotes::install_local('signac')"
+    rm -rf signac
+
+
 
     git clone https://github.com/velocyto-team/velocyto.R.git
     R --no-echo -e "remotes::install_local('velocyto.R')"
@@ -34,9 +62,7 @@ r-part2.def
     R --no-echo -e "remotes::install_local('monocle3')"
     rm -rf monocle3
 
-    git clone https://github.com/mojaveazure/seurat-disk.git
-    R --no-echo -e "remotes::install_local('seurat-disk')"
-    rm -rf seurat-disk
+
 
     git clone https://github.com/powellgenomicslab/Nebulosa.git
     R --no-echo -e "remotes::install_local('Nebulosa')"
@@ -50,24 +76,11 @@ r-part2.def
     R --no-echo -e "remotes::install_local('Banksy')"
     rm -rf Banksy
 
-    git clone -b seurat5 https://github.com/mojaveazure/seurat-object
-    R --no-echo -e "remotes::install_local('seurat-object')"
-    rm -rf seurat-object
 
-    git clone -b seurat5 https://github.com/stuart-lab/signac
-    R --no-echo -e "remotes::install_local('signac')"
-    rm -rf signac
-    
     
 
 
-    git clone -b seurat5 https://github.com/satijalab/seurat-wrappers.git
 
-    git clone -b seurat5 https://github.com/satijalab/seurat.git
-
-
-    R --no-echo -e "remotes::install_local('seurat-wrappers')"
-    rm -rf seurat-wrappers
 
     # R --no-echo -e "install.packages('BiocManager')"
 
