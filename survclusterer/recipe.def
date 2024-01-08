@@ -1,0 +1,30 @@
+BootStrap: docker
+From: ubuntu:focal
+
+%post
+    apt-get -y update && DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y \
+        build-essential \
+        dirmngr \
+        wget \
+        apt-transport-https \
+        software-properties-common \
+        gcc \
+        git \
+        make \
+        cmake \
+        libbz2-dev \
+        zlib1g-dev \
+        libncurses5-dev  \
+        libncursesw5-dev \
+        liblzma-dev
+    mkdir /app && cd /app
+    git clone https://github.com/Mesh89/SurVClusterer
+    cd SurVClusterer/ 
+    ./build_htslib.sh
+    cmake -DCMAKE_BUILD_TYPE=Release . 
+    make
+    chmod -R 777 /app
+
+%runscript -c /bin/bash
+    exec "/app/SurVClusterer/clusterer ${@}"
