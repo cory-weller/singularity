@@ -78,6 +78,7 @@ From: r-base:4.3.0
     R --no-echo -e "install.packages('optparse', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('BiocManager', repos='http://cran.us.r-project.org')"
     R --no-echo -e "install.packages('devtools', repos='http://cran.us.r-project.org')"
+    R --no-echo -e "install.packages('qqman', repos='http://cran.us.r-project.org')"
     R --no-echo -e "BiocManager::install('minfiData')"
     R --no-echo -e "devtools::install_github('markgene/maxprobes')"
     R --no-echo -e "devtools::install_github('perishky/meffil')"
