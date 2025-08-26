@@ -78,32 +78,3 @@ From: nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 
 # %runscript
     exec /bin/bash "$@"
-
-Basecalling:
-
-Trimming:
-
-    samtools/1.21
-    pychopper/2.7.10
-
- 
-
-Mapping: 
-
-    minimap2/2.29
-    samtools/1.21
-
- 
-
-Assembly:
-
-    isoquant/3.6.2
-    stringtie/2.2.3
-
- 
-
-Merge:
-
-    python/3.12
-    isoquant/3.6.2
-     gffcompare/0.12.6
