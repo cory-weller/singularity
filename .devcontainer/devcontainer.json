@@ -1,4 +1,5 @@
 {
     "build": { "dockerfile": "Dockerfile" },
     "runArgs": ["--privileged"],
+    "privileged": true,
 }
