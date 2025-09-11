@@ -1,0 +1,11 @@
+name: lrrna
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - samtools
+  - pychopper 
+  - minimap2
+  - isoquant
+  - stringtie
+  - gffcompare
