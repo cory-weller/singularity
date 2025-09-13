@@ -35,7 +35,8 @@ From: ubuntu:22.04
     # Create environment using mamba
     ENVNAME="lrrna"
     mamba create -y -n ${ENVNAME} 
-    mamba install samtools pychopper  minimap2 isoquant stringtie gffcompare -c bioconda
+    mamba install samtools==1.21 pychopper==2.7.10 minimap2==2.29 isoquant==3.6.2 stringtie==2.2.3 gffcompare==0.12.6 -c bioconda
+    mamba install python==3.12.11 -c conda-forge
 
     # Finalize bashrc file
     echo "#! /bin/bash\n\n# script to activate the conda environment" > ~/.bashrc 
